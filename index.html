@@ -17,5 +17,20 @@
         <h1>Welcome to my portfolio</h1>
         <p>Hello! I'm Kaspar, and this site is hosted on my raspberry pi</p>
         <p>The auto update works! x3 :)</p>
+        
+        <div id="deploy-count" style="margin-top: 2em; font-family: monospace;">
+        Site updated <span id="counter">...</span> times
+        </div>
+    
+        <script>
+            fetch('deploy-count.txt')
+                .then(res => res.text())
+                .then(data => {
+                    document.getElementById('counter').innerText = data.trim();
+                })
+                .catch(() => {
+                    document.getElementById('counter').innterText = 'N/A';
+                });
+            </script>
     </body>
 </html>
