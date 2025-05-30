@@ -24,14 +24,45 @@
             font-size: 2.5em;
         }
 
+        .tabs {
+            display: flex;
+            justify-content: center;
+            background: #e0e0e0;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .tab {
+            padding: 1em 2em;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+
+        .tab:hover {
+            background: #d0d0d0;
+        }
+
+        .tab.active {
+            background: white;
+            border-bottom: 3px solid #0057b8;
+        }
+
         .content-box {
             background: white;
             border: 1px solid #ddd;
             border-radius: 8px;
-            max-width: 600px;
+            max-width: 700px;
             margin: 40px auto;
             padding: 2em;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
         }
 
         #deploy-count {
@@ -53,9 +84,20 @@
     <h1>Welcome to my portfolio</h1>
 </header>
 
+<div class="tabs">
+    <div class="tab active" onclick="showTab('about')">About Me</div>
+    <div class="tab" onclick="showTab('projects')">Projects</div>
+</div>
+
 <div class="content-box">
-    <p>Hello! I'm Kaspar, and this site is hosted on my Raspberry Pi.</p>
-    <p>The auto update works! x3 :)</p>
+    <div id="about" class="tab-content active">
+        <p>Hello! I'm Kaspar, and this site is hosted on my Raspberry Pi.</p>
+        <p>The auto update works! x3 :)</p>
+    </div>
+    <div id="projects" class="tab-content">
+        <p>Project list coming soon...</p>
+        <!-- Add your projects here later -->
+    </div>
 </div>
 
 <div id="deploy-count">
@@ -63,9 +105,22 @@
 </div>
 
 <script>
+    // Handle tab switching
+    function showTab(tabId) {
+        const tabs = document.querySelectorAll('.tab');
+        const contents = document.querySelectorAll('.tab-content');
+
+        tabs.forEach(tab => tab.classList.remove('active'));
+        contents.forEach(c => c.classList.remove('active'));
+
+        document.querySelector(`.tab[onclick*="${tabId}"]`).classList.add('active');
+        document.getElementById(tabId).classList.add('active');
+    }
+
+    // Deploy count fetch
     fetch('deploy-count.txt')
-        .then((res) => res.text())
-        .then((data) => {
+        .then(res => res.text())
+        .then(data => {
             document.getElementById('counter').innerText = data.trim();
         })
         .catch(() => {
