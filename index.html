@@ -27,18 +27,22 @@
             font-family: 'Press Start 2P', monospace;
             position: relative;
             z-index: 10;
-            transition: background 0.3s ease;
         }
 
-        .header-hover-overlay {
-            position: fixed;
+        .tabs-container {
+            position: relative;
+            z-index: 5;
+        }
+
+        .tab-shadow-overlay {
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             pointer-events: none;
+            z-index: 1;
             background: transparent;
-            z-index: 5;
             transition: background 0.2s ease;
         }
 
@@ -48,6 +52,8 @@
             background: #e0e0e0;
             border-bottom: 1px solid #ccc;
             box-shadow: inset 0 -1px 3px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 2;
         }
 
         .tab {
@@ -109,15 +115,16 @@
 </head>
 <body>
 
-<div class="header-hover-overlay" id="hoverOverlay"></div>
-
-<div class="header-box" id="headerBox">
+<div class="header-box">
     WELCOME TO MY WEBSITE
 </div>
 
-<div class="tabs">
-    <div class="tab active" onclick="showTab('about')">About Me</div>
-    <div class="tab" onclick="showTab('projects')">Projects</div>
+<div class="tabs-container" id="tabsContainer">
+    <div class="tab-shadow-overlay" id="tabOverlay"></div>
+    <div class="tabs">
+        <div class="tab active" onclick="showTab('about')">About Me</div>
+        <div class="tab" onclick="showTab('projects')">Projects</div>
+    </div>
 </div>
 
 <div class="content-box scroll-fade" id="content-box">
@@ -149,7 +156,7 @@
         .then(data => document.getElementById('counter').innerText = data.trim())
         .catch(() => document.getElementById('counter').innerText = 'N/A');
 
-    // Scroll animation
+    // Fade in on scroll
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -159,24 +166,24 @@
     }, { threshold: 0.2 });
     document.querySelectorAll('.scroll-fade').forEach(el => observer.observe(el));
 
-    // Proximity-based darkening
-    const overlay = document.getElementById('hoverOverlay');
-    const headerBox = document.getElementById('headerBox');
+    // Tab shadow effect on proximity
+    const tabOverlay = document.getElementById('tabOverlay');
+    const tabContainer = document.getElementById('tabsContainer');
 
     document.addEventListener('mousemove', e => {
-        const rect = headerBox.getBoundingClientRect();
+        const rect = tabContainer.getBoundingClientRect();
         const centerX = rect.left + rect.width / 2;
         const centerY = rect.top + rect.height / 2;
         const dx = e.clientX - centerX;
         const dy = e.clientY - centerY;
         const distance = Math.sqrt(dx * dx + dy * dy);
-        const maxDistance = 250; // darken range
+        const maxDistance = 300;
 
         if (distance < maxDistance) {
-            const intensity = 0.3 * (1 - distance / maxDistance);
-            overlay.style.background = `radial-gradient(circle at ${e.clientX}px ${e.clientY}px, rgba(0,0,0,${intensity}), transparent 150px)`;
+            const intensity = 0.4 * (1 - distance / maxDistance);
+            tabOverlay.style.background = `radial-gradient(circle at ${e.clientX}px ${e.clientY}px, rgba(0,0,0,${intensity}), transparent 150px)`;
         } else {
-            overlay.style.background = 'transparent';
+            tabOverlay.style.background = 'transparent';
         }
     });
 </script>
