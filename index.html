@@ -16,67 +16,97 @@
 </div>
 </div>
 
-<div id="Description-text" class="card">
-    <div class="card-content">
-        <div class="text-center">
-            <div class="card-header">
-                <img src="Images/Kap.jpg" class="image-setup">
-            </div>
-            <div class="card-body">
-                <p class="DescText">Velkommen, mit navn er kaspar og det her er min hjemmeside.</p>
-            </div>
-            
-            <div class="row mt-4 px-3">
-                <div class="col-md-6">
-                    <h4>About me:</h4>
-                    <p>I’m a third-semester Software Engineering student at SDU – University of Southern Denmark.
-                        I’m originally from Næstved but attended high school (gymnasiet) in Gladsaxe, Copenhagen.
-                        Before starting university, I took a gap year where I worked with vulnerable children, an experience that taught me a lot about communication, patience, and empathy.</p>
-                    <p></p>
-                    <p>Now living in Odense, I enjoy coding and solving problems — I find great satisfaction in making things work and bringing ideas to life through code.
-                        Outside of my studies, I like to stay active by running and spending time with friends playing video games.
-                        I’m a very social person who enjoys meeting new people and attending social events, both in and outside of school.</p>
-                </div>
+<ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="about-tab" data-bs-toggle="tab" data-bs-target="#about" type="button" role="tab" aria-controls="about" aria-selected="true">
+            About Me
+        </button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="projects-tab" data-bs-toggle="tab" data-bs-target="#projects" type="button" role="tab" aria-controls="project" aria-selected="false">
+            Projects
+        </button>
+    </li>
+</ul>
 
-                <div class="col-md-6">
-                    <div class="text-start">
-                        <h4>My skills:</h4>
-                        <ul>
-                            <li>C#</li>
-                            <li>Git</li>
-                            <li>Scrum and agile processes such as TDD and BDD</li>
-                            <li>Jira</li>
-                            <li>Avalonia (Cross-platform UI Framework)</li>
-                            <li>HTML and CSS</li>
-                        </ul>
+<div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="about" role="tabpanel" aria-labelledby="about-tab">
+        <div id="Description-text" class="card">
+            <div class="card-content">
+                <div class="text-center">
+                    <div class="card-header">
+                        <img src="Images/Kap.jpg" class="image-setup">
+                    </div>
+                    <div class="card-body">
+                        <p class="DescText">Velkommen, mit navn er kaspar og det her er min hjemmeside.</p>
+                    </div>
 
-                        <div class="container" id="info-box">
-                            <p>As a third semester software ingeneering student i have also been a part of projects such as:</p>
-                            
-                            <ul>
-                                <p><li>First semester project:</li></p>
-                                <p>A console game with the main theme being FN's world goals</p>
-                                <p><li>Second semester project:</li></p>
-                                <p>Order Management team leader for a project where 4 groups made a shop application for a made up firm being heavily focused on agile processes</p>
-                            </ul>
-                           
+                    <div class="row mt-4 px-3">
+                        <div class="col-md-6">
+                            <h4>About me:</h4>
+                            <p>I’m a third-semester Software Engineering student at SDU – University of Southern Denmark.
+                                I’m originally from Næstved but attended high school (gymnasiet) in Gladsaxe, Copenhagen.
+                                Before starting university, I took a gap year where I worked with vulnerable children, an experience that taught me a lot about communication, patience, and empathy.</p>
+                            <p></p>
+                            <p>Now living in Odense, I enjoy coding and solving problems — I find great satisfaction in making things work and bringing ideas to life through code.
+                                Outside of my studies, I like to stay active by running and spending time with friends playing video games.
+                                I’m a very social person who enjoys meeting new people and attending social events, both in and outside of school.</p>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="text-start">
+                                <h4>My skills:</h4>
+                                <ul>
+                                    <li>C#</li>
+                                    <li>Git</li>
+                                    <li>Scrum and agile processes such as TDD and BDD</li>
+                                    <li>Jira</li>
+                                    <li>Avalonia (Cross-platform UI Framework)</li>
+                                    <li>HTML and CSS</li>
+                                </ul>
+
+                                <div class="container" id="info-box">
+                                    <p>As a third semester software ingeneering student i have also been a part of projects such as:</p>
+
+                                    <ul>
+                                        <p><li>First semester project:</li></p>
+                                        <p>A console game with the main theme being FN's world goals</p>
+                                        <p><li>Second semester project:</li></p>
+                                        <p>Order Management team leader for a project where 4 groups made a shop application for a made up firm being heavily focused on agile processes</p>
+                                    </ul>
+
+                                </div>
+                            </div>
                         </div>
                     </div>
+                    <div class="card-footer">
+                        <p class="username">Email: kaspar1910@gmail.com</p>
+                    </div>
                 </div>
-                
-            </div>
-            
-            
-            
-            
-            
-            
-            <div class="card-footer">
-                <p class="username">Email: kaspar1910@gmail.com</p>
             </div>
         </div>
     </div>
 </div>
+
+
+<div class="tab-pane fade" id="projects" role="tabpanel" aria-labelledby="projects-tab">
+    <div id="Projects-text" class="card">
+        <div class="card-content">
+            <div class="text-center">
+                <div class="card-header">
+                    <p class>Project examples:</p>
+                </div>
+                <div class="card-body">
+                    
+                </div>
+                <div class="card-footer">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
     
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>

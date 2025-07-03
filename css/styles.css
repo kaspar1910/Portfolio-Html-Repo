@@ -7,6 +7,7 @@ img.image-setup
 }
 
 .card {
+    margin-top: 0 !important;
     background: linear-gradient(
             to right,
             #d19e6d 0%,
@@ -19,7 +20,7 @@ img.image-setup
             #b82e4d 90%,
             #8c2a6a 90%,
             #8c2a6a 95%,
-            #672c70 95%,
+            #6e327c 95%,
             #672c70 101% 
     );
     
@@ -45,6 +46,30 @@ img.image-setup
     font-size: 35pt;
 }
 
+.nav-tabs .nav-link {
+    border-radius: 0 !important;
+    user-select: none;
+    background-color: coral !important;
+    border: none;
+    color: #ffffff;
+    font-size: 15pt;
+}
+
+.nav-tabs {
+    border-bottom: none;
+}
+
+#myTab{
+    background-color: dimgray !important;
+    box-shadow: 10px 15px 20px 0 rgba(100, 20, 0, 0.25);
+}
+
+#about-tab, #projects-tab {
+    font-family: 'courier new', courier, monospace;
+}
+
+
+
 #Velkommen-text 
 {
     width: 500px;
@@ -52,6 +77,7 @@ img.image-setup
     background-color: darkgray;
     border-radius: 0;
     margin-top: 25px;
+    margin-bottom: 25px;
 }
 
 #Description-text
@@ -63,6 +89,18 @@ img.image-setup
     margin: 25px auto;
     border-radius: 0;
 }
+
+#Projects-text{
+    font-size: 15pt;
+    font-family: 'Courier New', Courier, monospace;
+    width: 1500px;
+    height: 1500px;
+    margin: 25px auto;
+    border-radius: 0;
+}
+
+
+
 
 #info-box{
     border: 1px solid #000;
