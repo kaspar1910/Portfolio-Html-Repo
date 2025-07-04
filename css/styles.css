@@ -56,19 +56,13 @@ img.image-setup
 }
 
 .nav-tabs .nav-item .nav-link.active {
-    background-color: coral !important;
+    background-color: #8a3232 !important;
     color: #ffffff !important;
     border: none !important;
 }
 
 .nav-tabs .nav-item .nav-link:hover {
-    background-color: coral !important;
-    color: #ffffff !important;
-    border: none !important;
-}
-
-.nav-tabs .nav-item .nav-link:focus {
-    background-color: coral !important;
+    background-color: #6a3c3c !important;
     color: #ffffff !important;
     border: none !important;
 }
