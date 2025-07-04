@@ -67,6 +67,12 @@ img.image-setup
     border: none !important;
 }
 
+.nav-tabs .nav-item .nav-link:focus {
+    background-color: #8a3232 !important;
+    color: #ffffff !important;
+    border: none !important;
+}
+
 .nav-tabs {
     border-bottom: none;
 }
