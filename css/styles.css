@@ -79,9 +79,7 @@ img.image-setup
 
 .gallery-img{
     width: 500px;
-    height: auto; /* maintains aspect ratio */
-    image-rendering: auto; /* lets browser optimize quality */
-    border: 1px solid #000;
+    height: auto;
     border-radius: 0%;
     box-shadow: 10px 10px 20px 0 rgba(100, 20, 0, 0.25);
 }
